@@ -26,6 +26,15 @@ fi
 
 git init 
 
+########################## Writing to file .gitignore
+echo -e "$(awk '{printf "%s\n", $0}' <<EOF
+node_modules
+EOF
+)" > "$ROOT/.gitignore"
+###
+
+
+
 echo -e "$(awk '{printf "%s\\n", $0}' <<EOF
 {
   "name": "${PROJECT}",
